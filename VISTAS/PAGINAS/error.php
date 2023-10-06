@@ -1,6 +1,3 @@
-
-$usuarios = ControladorFormularios::ctrSeleccionarRegistros(null, null);
-?>
 <!--=========== Breadcumd Section Here ========= -->
 <section class="breadcumd__banner">
    <div class="container">
