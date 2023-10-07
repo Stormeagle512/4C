@@ -154,7 +154,8 @@ session_start(); ?>
                 $_GET["Inicio"] == "gallery" ||
                 $_GET["Inicio"] == "home" ||
                 $_GET["Inicio"] == "service-single" ||
-                $_GET["Inicio"] == "service" ||
+                $_GET["Inicio"] == "service" || 
+                $_GET["Inicio"] == "form" ||
                 $_GET["Inicio"] == "story" ) {
                 include "PAGINAS/" . $_GET["Inicio"] . ".php";
             }  else{
@@ -177,7 +178,7 @@ session_start(); ?>
             <div class="border__area">
                 <div class="container">
                     <div class="footer__logo center">
-                        <a href="index.html">
+                        <a href="index.php?Inicio=home">
                             <img src="html/assets/img/logo/logo.png" alt="footer__logo">
                         </a>
                     </div>

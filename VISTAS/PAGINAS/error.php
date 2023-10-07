@@ -7,7 +7,7 @@
          </h1>
          <ul class="right__content">
             <li>
-               <a href="index.html">
+               <a href="index.php?Inicio=home">
                   Home
                </a>
             </li>

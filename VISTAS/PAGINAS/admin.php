@@ -3,11 +3,11 @@
     <div class="container">
         <div class="breadcumd__wrapper center">
             <h1 class="left__content">
-                View Logs
+                Admin
             </h1>
             <ul class="right__content">
                 <li>
-                    <a href="index.html">
+                    <a href="index.php?Inicio=home">
                         Home
                     </a>
                 </li>
@@ -15,7 +15,7 @@
                     <i class="fa-solid fa-chevron-right"></i>
                 </li>
                 <li>
-                    View Logs
+                    Admin
                 </li>
             </ul>
         </div>
@@ -65,9 +65,16 @@ $usuarios = ControladorFormularios::ctrSeleccionarRegistros(null, null);
                                     <td> <?php echo $value["f"] ?> </td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href='index.php?pagina=edit&id=' <?php echo $value["id"]; ?>>
+                                            <a href= <?php echo 'index.php?Inicio=form&id='. $value["id"]; ?>>
                                                 <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i></button></a>
+                                              <form method="POST" >  
+                                              <input type = "hidden" value= <?php echo $value["id"]?> name="eliminarRegistro" >
                                             <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                            <?php 
+                                            $eliminar= new ControladorFormularios();
+                                            $eliminar-> ctrEliminarRegistro();
+                                           ?> 
+                                            </form>
                                         </div>
                                     </td>
                                 </tr>
