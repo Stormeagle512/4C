@@ -36,7 +36,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-7">
-                <h2 style="text-align: center">Modifie the User Data</h2>
+                <h2 style="text-align: center">Modify the User Data</h2>
                 <div class="d-flex justify-content-center text-center">
 
                     <form class="p-5 bg-light" method="post">

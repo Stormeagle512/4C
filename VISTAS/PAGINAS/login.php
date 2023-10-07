@@ -57,7 +57,7 @@
                         <div class="form-group form-check">
                             <label class="form-check-label">
                                 <input class="form-check-input" type="checkbox" /> 
-                                <label class="text-dark" for="">Recuerdame</label>
+                                <label class="text-dark" for="">Remember</label>
                             </label>
                         </div>
                         <!-- Esto es una plantilla no estatica -->
@@ -66,7 +66,7 @@
                          $ingreso->ctrIngreso();
 
                         ?>
-                        <button type="submit" class="btn btn-primary">Ingresar</button>
+                        <button type="submit" class="btn btn-primary">Login</button>
                     </form>
                 </div>
 
