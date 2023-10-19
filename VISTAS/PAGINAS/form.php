@@ -1,7 +1,7 @@
 <?php
-    if (isset($_GET["id"])) {
-        $item = "id";
-        $valor = $_GET["id"];
+    if (isset($_GET["token"])) {
+        $item = "token";
+        $valor = $_GET["token"];
     }
     
     $usuarios = ControladorFormularios::ctrSeleccionarRegistros($item, $valor);
@@ -66,7 +66,11 @@
                                     <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
                                 </div>
                                 <input type="hidden" value=<?php echo $usuarios["password"]?> name="passwordActual"/>
-                                <input type="hidden" value=<?php echo $usuarios["id"]?> name="idUsuario"/>
+                                <input type="hidden" value=<?php echo $usuarios["token"]?> name="tokenUsuario"/>
+
+                                <input type="hidden" value=<?php echo $usuarios["nombre"]?> name="nombreActual"/>
+                                <input type="hidden" value=<?php echo $usuarios["email"]?> name="emailActual"/>
+
                                 <input type="password" class="form-control" placeholder="Type your Password" id="pwd" name="actualizarPassword" />
                             </div>
 
@@ -77,15 +81,24 @@
                         </div>
                 
                      <?php
-                         //forma en que se instancia la clase statica
+                    
                          $actualizar = ControladorFormularios::ctrActualizarRegistro();
                         if ($actualizar == "ok") {
                             echo '<script>
-        if(window.history.replaceState){
-            window.history.replaceState(null,null, window.location.href);
-        }
-        </script>';
+                            if(window.history.replaceState){
+                            window.history.replaceState(null,null, window.location.href);
+                            }
+                            </script>';
+
                             echo '<div class = "alert alert-success">El usuario ha sido actualizado</div>';
+                        }
+                        if ($actualizar == "error"){
+                            echo '<script>
+                            if(window.history.replaceState){
+                            window.history.replaceState(null,null, window.location.href);
+                            }
+                            </script>';
+                            echo '<div class = "alert alert-danger">¡Error! Al actualizar el usuario </div>';
                         }
                         ?>
                         <button type= "submit" class="btn btn-primary">Actualizar</button>
